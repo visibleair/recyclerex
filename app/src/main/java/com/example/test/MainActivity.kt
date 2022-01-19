@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.test.databinding.ActivityMainBinding
 import okhttp3.*
@@ -26,7 +27,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        supportActionBar?.setTitle("Обсуждения")
+
+        supportActionBar?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        supportActionBar?.setCustomView(R.layout.action_layout)
+        var title = findViewById<androidx.appcompat.widget.AppCompatTextView>(R.id.TitleAction)
+        title.text = "Обсуждения"
+
         setContentView(binding.root)
 
 
