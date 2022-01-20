@@ -19,10 +19,8 @@ class RecyclerAdapter(private  var titles: List<String>, private var details: Li
             itemView.setOnClickListener{ v: View ->
                 val position: Int = adapterPosition
                 Toast.makeText(itemView.context,"You clicked on item ${position+1}", Toast.LENGTH_SHORT).show()
-
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
